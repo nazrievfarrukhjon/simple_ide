@@ -44,5 +44,10 @@
                      Clicked="OnOpenFileButtonClicked"
                      Priority="0"
                      Order="Primary" />
+        
+        <ToolbarItem Text="Save File"
+                     Clicked="OnSaveFileButtonClicked"
+                     Priority="1"
+                     Order="Primary" />
     </ContentPage.ToolbarItems>
 </ContentPage>

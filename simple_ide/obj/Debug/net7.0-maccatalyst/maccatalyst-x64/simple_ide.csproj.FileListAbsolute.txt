@@ -232,6 +232,12 @@
 /Users/farruqnazri/Desktop/Projects/simple_ide/simple_ide/obj/Debug/net7.0-maccatalyst/maccatalyst-x64/resizetizer/r/dotnet_bot.png
 /Users/farruqnazri/Desktop/Projects/simple_ide/simple_ide/obj/Debug/net7.0-maccatalyst/maccatalyst-x64/resizetizer/r/dotnet_bot@2x.png
 /Users/farruqnazri/Desktop/Projects/simple_ide/simple_ide/obj/Debug/net7.0-maccatalyst/maccatalyst-x64/resizetizer/r/dotnet_bot@3x.png
+/Users/farruqnazri/Desktop/Projects/simple_ide/simple_ide/obj/Debug/net7.0-maccatalyst/maccatalyst-x64/resizetizer/r/home.png
+/Users/farruqnazri/Desktop/Projects/simple_ide/simple_ide/obj/Debug/net7.0-maccatalyst/maccatalyst-x64/resizetizer/r/home@2x.png
+/Users/farruqnazri/Desktop/Projects/simple_ide/simple_ide/obj/Debug/net7.0-maccatalyst/maccatalyst-x64/resizetizer/r/home@3x.png
+/Users/farruqnazri/Desktop/Projects/simple_ide/simple_ide/obj/Debug/net7.0-maccatalyst/maccatalyst-x64/resizetizer/r/list.png
+/Users/farruqnazri/Desktop/Projects/simple_ide/simple_ide/obj/Debug/net7.0-maccatalyst/maccatalyst-x64/resizetizer/r/list@2x.png
+/Users/farruqnazri/Desktop/Projects/simple_ide/simple_ide/obj/Debug/net7.0-maccatalyst/maccatalyst-x64/resizetizer/r/list@3x.png
 /Users/farruqnazri/Desktop/Projects/simple_ide/simple_ide/obj/Debug/net7.0-maccatalyst/maccatalyst-x64/mauiimage.stamp
 /Users/farruqnazri/Desktop/Projects/simple_ide/simple_ide/obj/Debug/net7.0-maccatalyst/maccatalyst-x64/resizetizer/f/MauiInfo.plist
 /Users/farruqnazri/Desktop/Projects/simple_ide/simple_ide/obj/Debug/net7.0-maccatalyst/maccatalyst-x64/mauifont.stamp
@@ -257,9 +263,3 @@
 /Users/farruqnazri/Desktop/Projects/simple_ide/simple_ide/obj/Debug/net7.0-maccatalyst/maccatalyst-x64/simple_ide.pdb
 /Users/farruqnazri/Desktop/Projects/simple_ide/simple_ide/obj/Debug/net7.0-maccatalyst/maccatalyst-x64/simple_ide.genruntimeconfig.cache
 /Users/farruqnazri/Desktop/Projects/simple_ide/simple_ide/obj/Debug/net7.0-maccatalyst/maccatalyst-x64/ref/simple_ide.dll
-/Users/farruqnazri/Desktop/Projects/simple_ide/simple_ide/obj/Debug/net7.0-maccatalyst/maccatalyst-x64/resizetizer/r/home.png
-/Users/farruqnazri/Desktop/Projects/simple_ide/simple_ide/obj/Debug/net7.0-maccatalyst/maccatalyst-x64/resizetizer/r/home@2x.png
-/Users/farruqnazri/Desktop/Projects/simple_ide/simple_ide/obj/Debug/net7.0-maccatalyst/maccatalyst-x64/resizetizer/r/home@3x.png
-/Users/farruqnazri/Desktop/Projects/simple_ide/simple_ide/obj/Debug/net7.0-maccatalyst/maccatalyst-x64/resizetizer/r/list.png
-/Users/farruqnazri/Desktop/Projects/simple_ide/simple_ide/obj/Debug/net7.0-maccatalyst/maccatalyst-x64/resizetizer/r/list@2x.png
-/Users/farruqnazri/Desktop/Projects/simple_ide/simple_ide/obj/Debug/net7.0-maccatalyst/maccatalyst-x64/resizetizer/r/list@3x.png

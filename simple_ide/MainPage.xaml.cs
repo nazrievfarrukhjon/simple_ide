@@ -1,4 +1,6 @@
-﻿namespace simple_ide;
+﻿using System.Xml.Linq;
+
+namespace simple_ide;
 
 using Microsoft.Maui.Storage;
 using Microsoft.Maui.Controls;
@@ -12,34 +14,9 @@ public partial class MainPage : ContentPage
 
     private void OnFileClicked(object sender, EventArgs e)
     {
-        // Handle file operations (e.g., new, open, save)
         DisplayAlert("File", "File operations will go here.", "OK");
     }
 
-    private void OnToolsClicked(object sender, EventArgs e)
-    {
-        // Handle tool operations (e.g., formatting, options)
-        DisplayAlert("Tools", "Tool operations will go here.", "OK");
-    }
-
-    private void OnHelpClicked(object sender, EventArgs e)
-    {
-        // Show help information
-        DisplayAlert("Help", "Help information will go here.", "OK");
-    }
-
-    // Optional: If you want to keep the counter functionality, 
-    // you can implement it as needed.
-    private int count = 0;
-
-    private void OnCounterClicked(object sender, EventArgs e)
-    {
-        count++;
-
-        // Example of how you could use the counter, but this can be removed 
-        // if you only want the text editor features.
-        DisplayAlert("Counter", $"Clicked {count} time{(count > 1 ? "s" : "")}.", "OK");
-    }
 
     private void TapGestureRecognizer_OnTapped(object sender, TappedEventArgs e)
     {
@@ -55,7 +32,8 @@ public partial class MainPage : ContentPage
                 PickerTitle = "Please select a file"
             });
 
-            if (result != null) {
+            if (result != null)
+            {
                 var filePickerFileType = new FilePickerFileType(new Dictionary<DevicePlatform, IEnumerable<string>>
                 {
                     { DevicePlatform.Android, new[] { "text/plain", ".txt" } },
@@ -75,8 +53,58 @@ public partial class MainPage : ContentPage
                 }
             }
         }
-        catch (Exception ex) {
+        catch (Exception ex)
+        {
             Console.WriteLine($"Error picking file: {ex.Message}");
+        }
+    }
+
+    private async void OnSaveFileButtonClicked(object sender, EventArgs e)
+    {
+        try
+        {
+            // Ask the user for a directory where they want to save the file
+            string directoryPath = await DisplayPromptAsync("Directory Path",
+                "Enter the directory path to save your file:", "OK", "Cancel", "/Users/farruqnazri/Desktop");
+
+            // Ask the user for a file name
+            string fileName = await DisplayPromptAsync("File Name", "Enter the name of the file (with .txt extension):",
+                "OK", "Cancel", "filename.txt");
+
+            // Ensure a valid directory path and file name is provided
+            if (!string.IsNullOrWhiteSpace(directoryPath) &&
+                !string.IsNullOrWhiteSpace(fileName) &&
+                fileName.EndsWith(".txt"))
+            {
+                // Construct the full path for saving the file
+                var filePath = System.IO.Path.Combine(directoryPath.Trim(), fileName);
+
+                // Create the directory if it doesn't exist
+                if (!System.IO.Directory.Exists(directoryPath))
+                {
+                    System.IO.Directory.CreateDirectory(directoryPath);
+                }
+
+                // Attempt to write the text from the TextEditor to the specified file
+                try
+                {
+                    await System.IO.File.WriteAllTextAsync(filePath, TextEditor.Text);
+                    await DisplayAlert("Success", $"File saved to: {filePath}", "OK");
+                }
+                catch (Exception ex)
+                {
+                    await DisplayAlert("Error", $"Could not save the file: {ex.Message}", "OK");
+                }
+            }
+            else
+            {
+                await DisplayAlert("Error", "Please enter a valid directory path and file name with a .txt extension.",
+                    "OK");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error saving file: {ex.Message}");
         }
     }
 }
