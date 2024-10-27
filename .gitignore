@@ -1,1 +1,51 @@
-/.idea/
+# Build results
+[Bb]in/
+[Oo]bj/
+*.apk
+*.aab
+*.app
+*.ipa
+*.dll
+*.pdb
+*.mdb
+*.exe
+*.db
+
+# User-specific files
+*.user
+*.suo
+*.userprefs
+*.sln.docstates
+
+# Visual Studio Code settings
+.vscode/
+*.code-workspace
+
+# Rider settings
+.idea/
+*.sln.iml
+
+# MacOS Finder files
+.DS_Store
+
+# Local secrets (e.g. API keys)
+*.secret
+
+# Backup files
+*~
+*.bak
+
+# Android Studio files
+local.properties
+*.iml
+
+# Xamarin files
+*.xap
+*.xap.deploy
+*.appx
+*.appxsym
+
+# .NET Core files
+project.lock.json
+project.fragment.lock.json
+artifacts/
