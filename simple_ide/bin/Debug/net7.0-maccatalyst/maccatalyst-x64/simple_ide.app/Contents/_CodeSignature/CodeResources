@@ -12,10 +12,6 @@
 		<data>
 		X3+2bOLbFRIBpBZTc+okM5lUR+o=
 		</data>
-		<key>Resources/MauiInfo.plist</key>
-		<data>
-		iEtuUGCV6JM3gxS/pO33swhmpp8=
-		</data>
 		<key>Resources/MonoTouchDebugConfiguration.txt</key>
 		<data>
 		oowkf1sL6T19nanXUObgmuayWqM=
@@ -1384,14 +1380,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9UoU04/XWIaPr0mKRUnRV5O3ACX+owsFDveXhCCFp8o=
+			sP0omFQW0QXKhQLDIIfTUjr22hGqKjmVX0VvMmlQOYU=
 			</data>
 		</dict>
 		<key>MonoBundle/simple_ide.pdb</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4W0il/VUbzPAw6JRaEAzij0HO+67dbbCEDI7EVkA+po=
+			FGgS6edYgit84GCiNOgZ1kJjfcZfTAGpVsyKNNZ1tkg=
 			</data>
 		</dict>
 		<key>Resources/AboutAssets.txt</key>
@@ -1406,13 +1402,6 @@
 			<key>hash2</key>
 			<data>
 			I9nrByosfmWAm2e4UQt26hp0d3yp6P6wHSnna3IT4Wc=
-			</data>
-		</dict>
-		<key>Resources/MauiInfo.plist</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			tx0KXqEC+DvcCGyogQTEQWHcCWJYYqH24NtPwhpQEjo=
 			</data>
 		</dict>
 		<key>Resources/MonoTouchDebugConfiguration.txt</key>
