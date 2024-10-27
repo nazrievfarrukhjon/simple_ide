@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <_PostProcessingItem Include="simple_ide.app/Contents/MacOS/simple_ide">
+      <BCSymbolMapName>simple_ide.bcsymbolmap</BCSymbolMapName>
+      <NoDSymUtil>true</NoDSymUtil>
+      <dSYMSourcePathExists>false</dSYMSourcePathExists>
+      <NoSymbolStrip>true</NoSymbolStrip>
+      <dSYMInfoPlistRelativePath>simple_ide.app.dSYM\Contents\Info.plist</dSYMInfoPlistRelativePath>
+      <SymbolFile>/Users/farruqnazri/Desktop/Projects/simple_ide/simple_ide/obj/Debug/net7.0-maccatalyst/maccatalyst-x64/mtouch-symbols.list</SymbolFile>
+      <DSymName>simple_ide.app.dSYM</DSymName>
+      <SourceProjectPath>/Users/farruqnazri/Desktop/Projects/simple_ide/simple_ide</SourceProjectPath>
+    </_PostProcessingItem>
+  </ItemGroup>
+</Project>

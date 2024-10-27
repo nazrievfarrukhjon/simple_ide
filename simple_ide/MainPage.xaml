@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="simple_ide.MainPage"
+             BackgroundColor="{StaticResource PageBackgroundColor}">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="PageBackgroundColor">#2E2E2E</Color>
+            <Color x:Key="ButtonBackgroundColor">#2E2E2E</Color>
+            <Color x:Key="ButtonTextColor">White</Color>
+            <Style x:Key="EditorStyle" TargetType="Editor">
+                <Setter Property="BackgroundColor" Value="{StaticResource PageBackgroundColor}" />
+                <Setter Property="TextColor" Value="{StaticResource ButtonTextColor}" />
+                <Setter Property="HeightRequest" Value="800" />
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout Padding="10">
+
+        <Label Text=""
+               TextColor="{StaticResource ButtonTextColor}"
+               FontSize="Medium"
+               VerticalOptions="Start">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped" />
+            </Label.GestureRecognizers>
+        </Label>
+
+        <ScrollView>
+            <Editor
+                x:Name="TextEditor"
+                Style="{StaticResource EditorStyle}"
+                Placeholder="" />
+        </ScrollView>
+    </StackLayout>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Open File"
+                     Clicked="OnOpenFileButtonClicked"
+                     Priority="0"
+                     Order="Primary" />
+    </ContentPage.ToolbarItems>
+</ContentPage>
