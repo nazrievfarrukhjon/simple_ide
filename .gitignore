@@ -49,5 +49,5 @@ local.properties
 project.lock.json
 project.fragment.lock.json
 artifacts/
-simple_ide/obj/
-simple_ide/bin/
+simple_ide/obj/*
+simple_ide/bin/*
