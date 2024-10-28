@@ -16,13 +16,14 @@
                 <Setter Property="TextColor" Value="{StaticResource ButtonTextColor}" />
                 <Setter Property="HeightRequest" Value="800" />
                 <Setter Property="HorizontalOptions" Value="FillAndExpand" />
-                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="VerticalOptions" Value="Start" /> <!-- Aligns to top -->
+                <Setter Property="CursorPosition" Value="0" /> <!-- Places cursor at the top left -->
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
 
     <!-- Main Layout -->
-    <Grid RowDefinitions="Auto, *" ColumnDefinitions="Auto, Auto, *" Padding="10">
+    <Grid RowDefinitions="Auto, *" ColumnDefinitions="Auto, Auto, *, Auto" Padding="10">
 
         <!-- Leftmost Icon Bar for Toggle and Future Icons -->
         <StackLayout Grid.RowSpan="2" 
@@ -37,9 +38,6 @@
                     Clicked="ToggleFolders_Clicked"
                     HorizontalOptions="Center"
                     VerticalOptions="Start" />
-
-            <!-- Placeholder for additional icons -->
-            <!-- Future buttons or icons can be added here -->
         </StackLayout>
 
         <!-- Separator Line between Icon Bar and Folder Structure -->
@@ -58,7 +56,6 @@
                     <Label Text="Folder Structure Here"
                            TextColor="{StaticResource ButtonTextColor}" 
                            FontSize="Medium" />
-                    <!-- Add a TreeView here if needed -->
                 </StackLayout>
             </ScrollView>
         </StackLayout>
@@ -70,12 +67,42 @@
                  VerticalOptions="FillAndExpand" />
 
         <!-- Right Panel: Code Editor -->
-        <ScrollView Grid.Row="1" Grid.Column="3">
+        <ScrollView Grid.Row="1" Grid.Column="2">
             <Editor
                 x:Name="TextEditor"
                 Style="{StaticResource EditorStyle}"
                 Placeholder="Code Editor" />
         </ScrollView>
+        
+        <!-- Right Panel: Collapsible Structure -->
+        <StackLayout Grid.Row="1" Grid.Column="3" x:Name="RightPanel" 
+                     BackgroundColor="DarkSlateGray" 
+                     WidthRequest="200" 
+                     IsVisible="False">
+            <ScrollView>
+                <StackLayout>
+                    <Label Text="Collapsible Structure Here"
+                           TextColor="{StaticResource ButtonTextColor}" 
+                           FontSize="Medium" />
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+        
+        <!-- Rightmost Icon Bar for Toggle -->
+        <StackLayout Grid.RowSpan="2" 
+                     Grid.Column="4"
+                     BackgroundColor="Black" 
+                     WidthRequest="30" HorizontalOptions="End" 
+                     VerticalOptions="FillAndExpand"
+                     >
+            <Button Text="_" 
+                    BackgroundColor="Transparent"
+                    TextColor="{StaticResource ButtonTextColor}" 
+                    FontSize="Large"
+                    Clicked="ToggleRightPanel_Clicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Start" />
+        </StackLayout>
     </Grid>
 
     <ContentPage.ToolbarItems>

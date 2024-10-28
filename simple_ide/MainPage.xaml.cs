@@ -170,5 +170,11 @@ public partial class MainPage : ContentPage
     
     public List<TreeItem> TreeData { get; set; }
 
+    
+    private void ToggleRightPanel_Clicked(object sender, EventArgs e)
+    {
+        RightPanel.IsVisible = !RightPanel.IsVisible;
+    }
+
 
 }
