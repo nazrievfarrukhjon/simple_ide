@@ -144,24 +144,25 @@ public partial class MainPage : ContentPage
     }
     
     private bool _isFolderPanelVisible = true;
-
     
     private void ToggleFolders_Clicked(object sender, EventArgs e)
     {
         _isFolderPanelVisible = !_isFolderPanelVisible;
-        
+    
+        // Set the visibility of the folder panel and separators
         FolderPanel.IsVisible = _isFolderPanelVisible;
-        Separator.IsVisible = _isFolderPanelVisible;
+        LeftSeparator.IsVisible = _isFolderPanelVisible;
+        RightSeparator.IsVisible = _isFolderPanelVisible;
 
         if (_isFolderPanelVisible)
         {
-            // Set FolderPanel column width to 200 and Editor column width to Auto
+            // Set FolderPanel width to 200 and Editor column span to 1
             FolderPanel.WidthRequest = 200;
             Grid.SetColumnSpan(TextEditor, 1);
         }
         else
         {
-            // Set FolderPanel column width to 0 and make Editor span two columns
+            // Set FolderPanel width to 0 and make Editor span two columns
             FolderPanel.WidthRequest = 0;
             Grid.SetColumnSpan(TextEditor, 2);
         }
