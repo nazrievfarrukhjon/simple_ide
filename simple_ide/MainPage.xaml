@@ -10,6 +10,7 @@
             <Color x:Key="PageBackgroundColor">#2E2E2E</Color>
             <Color x:Key="ButtonBackgroundColor">#2E2E2E</Color>
             <Color x:Key="ButtonTextColor">White</Color>
+            <Color x:Key="SeparatorColor">#505050</Color>
             <Style x:Key="EditorStyle" TargetType="Editor">
                 <Setter Property="BackgroundColor" Value="{StaticResource PageBackgroundColor}" />
                 <Setter Property="TextColor" Value="{StaticResource ButtonTextColor}" />
@@ -20,24 +21,50 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <StackLayout Padding="10">
+    <!-- Main Layout -->
+    <Grid RowDefinitions="Auto, *" ColumnDefinitions="Auto, Auto, *" Padding="10">
 
-        <Label Text=""
-               TextColor="{StaticResource ButtonTextColor}"
-               FontSize="Medium"
-               VerticalOptions="Start">
-            <Label.GestureRecognizers>
-                <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped" />
-            </Label.GestureRecognizers>
-        </Label>
+    <!-- Toggle Button on the Left Side -->
+    <Button Text="Toggle Folders" 
+            BackgroundColor="{StaticResource ButtonBackgroundColor}" 
+            TextColor="{StaticResource ButtonTextColor}" 
+            Clicked="ToggleFolders_Clicked"
+            Grid.Row="0"
+            Grid.Column="0" />
 
+    <!-- Additional space-filler to align items if needed -->
+    <Label Grid.Row="0" Grid.Column="1" />
+
+    <!-- Left Panel: Collapsible Folder Structure -->
+    <StackLayout Grid.Row="1" Grid.Column="0" x:Name="FolderPanel" 
+                 BackgroundColor="{StaticResource PageBackgroundColor}" 
+                 WidthRequest="200" 
+                 IsVisible="True">
         <ScrollView>
-            <Editor
-                x:Name="TextEditor"
-                Style="{StaticResource EditorStyle}"
-                Placeholder="" />
+            <StackLayout>
+                <Label Text="Folder Structure Here"
+                       TextColor="{StaticResource ButtonTextColor}" 
+                       FontSize="Medium" />
+                <!-- Add a TreeView here if needed -->
+            </StackLayout>
         </ScrollView>
     </StackLayout>
+
+    <!-- Separator Line -->
+    <BoxView x:Name="Separator" Grid.Row="1" Grid.Column="1" 
+             WidthRequest="1"
+             Color="{StaticResource SeparatorColor}"
+             VerticalOptions="FillAndExpand" />
+
+    <!-- Right Panel: Code Editor -->
+    <ScrollView Grid.Row="1" Grid.Column="2">
+        <Editor
+            x:Name="TextEditor"
+            Style="{StaticResource EditorStyle}"
+            Placeholder="Code Editor" />
+    </ScrollView>
+</Grid>
+
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Open File"

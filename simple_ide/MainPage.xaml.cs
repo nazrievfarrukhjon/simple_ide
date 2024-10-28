@@ -10,6 +10,41 @@ public partial class MainPage : ContentPage
     public MainPage()
     {
         InitializeComponent();
+        
+        TreeData = new List<TreeItem>
+        {
+            new TreeItem
+            {
+                Name = "Root Folder",
+                IsFolder = true,
+                Children = new List<TreeItem>
+                {
+                    new TreeItem
+                    {
+                        Name = "Subfolder 1",
+                        IsFolder = true,
+                        Children = new List<TreeItem>
+                        {
+                            new TreeItem { Name = "File 1.txt", IsFolder = false },
+                            new TreeItem { Name = "File 2.txt", IsFolder = false }
+                        }
+                    },
+                    new TreeItem
+                    {
+                        Name = "Subfolder 2",
+                        IsFolder = true,
+                        Children = new List<TreeItem>
+                        {
+                            new TreeItem { Name = "File 3.txt", IsFolder = false }
+                        }
+                    },
+                    new TreeItem { Name = "File 4.txt", IsFolder = false }
+                }
+            }
+        };
+
+        // Set the data context
+        BindingContext = this;
     }
 
     private void OnFileClicked(object sender, EventArgs e)
@@ -107,4 +142,32 @@ public partial class MainPage : ContentPage
             Console.WriteLine($"Error saving file: {ex.Message}");
         }
     }
+    
+    private bool _isFolderPanelVisible = true;
+
+    
+    private void ToggleFolders_Clicked(object sender, EventArgs e)
+    {
+        _isFolderPanelVisible = !_isFolderPanelVisible;
+        
+        FolderPanel.IsVisible = _isFolderPanelVisible;
+        Separator.IsVisible = _isFolderPanelVisible;
+
+        if (_isFolderPanelVisible)
+        {
+            // Set FolderPanel column width to 200 and Editor column width to Auto
+            FolderPanel.WidthRequest = 200;
+            Grid.SetColumnSpan(TextEditor, 1);
+        }
+        else
+        {
+            // Set FolderPanel column width to 0 and make Editor span two columns
+            FolderPanel.WidthRequest = 0;
+            Grid.SetColumnSpan(TextEditor, 2);
+        }
+    }
+    
+    public List<TreeItem> TreeData { get; set; }
+
+
 }
