@@ -7,3 +7,4 @@ my own simple IDE bcz norm ides are very expensive
 - theme (colors)
 - refactor features (extract method)
 - terminal
+- connection  to DB
